@@ -1,7 +1,7 @@
 #!/bin/bash
-# ###########
-# Settings
-# ###########
+# ####################
+# Settings.
+# ####################
 RecordName=exanmpel.com
 HostedZoneId=xxxxx
 
@@ -10,7 +10,7 @@ HostedZoneId=xxxxx
 # ####################
 touch ip
 cip=$(curl ifconfig.io)
-#fip=$(cat ip)
+fip=$(cat ip)
 
 if [[ $cip = $fip ]]; then
   echo matche!
@@ -39,5 +39,5 @@ else
   }
 EOJ
 
-  aws route53 change-resource-record-sets --hosted-zone-id \"$HostedZoneId\" --change-batch file://json
+  aws route53 change-resource-record-sets --hosted-zone-id "${HostedZoneId}" --change-batch file://json
 fi
