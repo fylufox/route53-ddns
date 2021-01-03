@@ -1,9 +1,10 @@
 #!/bin/bash
 # ####################
-# Settings.
+# read config.
 # ####################
-RecordName=exanmpel.com
-HostedZoneId=xxxxx
+awsprofile=$(sed -ne '/AwsProfile/p' route53-ddns.conf | sed -ne 's/^.\+=//gp')
+RecordName=$(sed -ne '/RecordName/p' route53-ddns.conf | sed -ne 's/^.\+=//gp')
+HostedZoneId=$(sed -ne '/HostedZoneId/p' route53-ddns.conf | sed -ne 's/^.\+=//gp')
 
 # ####################
 # Scripts.
@@ -39,5 +40,6 @@ else
   }
 EOJ
 
-  aws route53 change-resource-record-sets --hosted-zone-id "${HostedZoneId}" --change-batch file://json
+  aws route53 change-resource-record-sets --hosted-zone-id "${HostedZoneId}" --change-batch file://json --profile "${awsprofile}"
+  rm json
 fi
