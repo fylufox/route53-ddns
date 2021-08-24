@@ -1,4 +1,4 @@
-Unit]
+[Unit]
 Description=route53 DDNS Service.
 After=network.service
 
