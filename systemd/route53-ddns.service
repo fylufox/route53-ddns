@@ -1,0 +1,10 @@
+Unit]
+Description=route53 DDNS Service.
+After=network.service
+
+[Service]
+Type=simple
+ExecStart=/bin/sh /root/route53-ddns/surveillance.sh
+
+[Install]
+WantedBy=multi-user.target
