@@ -1,4 +1,5 @@
 #!/bin/bash
+cd /root/route53-ddns/
 # ####################
 # read config.
 # ####################
