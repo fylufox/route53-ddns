@@ -10,3 +10,9 @@ RecordName=exanmple.com
 # (require) Route53 HostedZoneId
 HostedZoneId=xxxx
 ```
+# systemd
+`/etc/systemd/system`に`/systemd/route53-ddns.service`と`/systemd/route53-ddns.timer`を配置  
+```
+sudo systemctl start route53-ddns.timer
+sudo systemctl enable route53-ddns.timer
+```
