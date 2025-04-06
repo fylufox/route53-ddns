@@ -4,7 +4,7 @@ After=network.service
 
 [Service]
 Type=simple
-ExecStart=/bin/sh /usr/local/route53-ddns/script/surveillance.sh
+ExecStart=/bin/sh /usr/local/bin/route53-ddns/script/surveillance.sh
 
 [Install]
 WantedBy=multi-user.target
