@@ -6,14 +6,14 @@ set -e
 git clone https://github.com/fylufox/route53-ddns.git /usr/local/bin/route53-ddns
 
 # Copy config file
-echo "Copying configuration file..."
-CONFIG_FILE="/etc/route53-ddns.conf"
-if [ -f "$CONFIG_FILE" ]; then
-  rm -f "$CONFIG_FILE"
-fi
-cp "$(hostname)_route53-ddns.conf" "$CONFIG_FILE"
-chown root:root "$CONFIG_FILE"
-chmod 0644 "$CONFIG_FILE"
+# echo "Copying configuration file..."
+# CONFIG_FILE="/etc/route53-ddns.conf"
+# if [ -f "$CONFIG_FILE" ]; then
+#   rm -f "$CONFIG_FILE"
+# fi
+# cp "$(hostname)_route53-ddns.conf" "$CONFIG_FILE"
+# chown root:root "$CONFIG_FILE"
+# chmod 0644 "$CONFIG_FILE"
 
 # Set file permissions
 echo "Setting file permissions for surveillance.sh..."
